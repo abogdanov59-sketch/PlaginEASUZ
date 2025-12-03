@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <entity name="RegistryService\Infrastructure\Extension\Easuz\Domain\Model\Entity\EasuzToken"
+            table="__EASUZ_TOKEN_TABLE__"
+            schema="__EASUZ_SCHEMA__">
+
+        <id name="id" type="integer">
+            <generator strategy="IDENTITY"/>
+        </id>
+
+        <field name="value"
+               column="__EASUZ_TOKEN_VALUE_COLUMN__"
+               type="string"
+               length="__EASUZ_TOKEN_VALUE_LENGTH__"/>
+
+        <field name="createdAt"
+               column="__EASUZ_TOKEN_CREATED_AT_COLUMN__"
+               type="datetime_immutable"/>
+
+        <field name="expiresAt"
+               column="__EASUZ_TOKEN_EXPIRES_AT_COLUMN__"
+               type="datetime_immutable"
+               nullable="true"/>
+
+        <field name="isActive"
+               column="__EASUZ_TOKEN_IS_ACTIVE_COLUMN__"
+               type="boolean"/>
+    </entity>
+</doctrine-mapping>
